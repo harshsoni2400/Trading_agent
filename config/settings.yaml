@@ -1,0 +1,33 @@
+capital:
+  total: 100000          # INR
+  per_trade: 45000       # INR
+  max_concurrent: 2
+  max_daily_trades: 4
+
+signals:
+  rsi_period: 14
+  ema_fast: 9
+  ema_slow: 21
+  orb_minutes: 15
+  volume_spike_multiplier: 2.0
+  vwap_volume_multiplier: 1.5
+  min_score: 3           # Out of 5 factors
+
+exits:
+  target_pct: 1.2        # 1.2% profit target
+  stoploss_pct: 0.6      # 0.6% stop loss
+  trailing_trigger_pct: 0.7  # Trail SL to breakeven at 0.7% profit
+  squareoff_time: "15:15"
+
+safety:
+  no_trade_before: "09:20"
+  no_trade_after: "14:30"
+  max_vix: 18.0
+  max_gap_pct: 1.0
+  max_daily_loss: 2000   # INR
+
+universe:
+  min_volume_cr: 50      # Avg daily volume in crores
+  atr_pct_min: 1.5
+  atr_pct_max: 3.0
+  lookback_days: 20
